@@ -1,0 +1,27 @@
+.news-ev-and-congr {
+    padding: 0 15px;
+    &__container {
+        margin: 60px auto 0;
+    }
+
+    &__items {
+        @include flexible(space-between, center);
+    }
+}
+
+@media (max-width: 1024px) {
+    .news-ev-and-congr {
+        &__container {
+            max-width: 800px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .news-ev-and-congr {
+        padding:0;
+        &__items {
+            flex-direction: column;
+        }
+    }
+}

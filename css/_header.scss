@@ -1,0 +1,314 @@
+.header {
+    position: relative;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &::before {
+        position: absolute;
+        content: "";
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+    }
+
+    &__content {
+        @include flexible(space-between, center);
+        border-bottom: 1px solid $color-dark-blue;
+    }
+
+    &__logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        img {
+            height: 60px;
+            width: 47px;
+        }
+    }
+
+    &__list {
+        position: relative;
+        z-index: 10;
+        flex: 0 1 calc(1070px / 1170px * 100%);
+
+        @include font(13px, 22px, 500);
+
+        letter-spacing: 0.05em;
+
+        @include flexible(space-between, center);
+
+        li {
+            cursor: pointer;
+
+            a {
+                color: $color-dark-blue;
+                transition: all .3s;
+            }
+
+            &:hover {
+                a {
+                    color: $color-orange;
+                }
+            }
+        }
+
+        .drop-down {
+            height: 60px;
+
+            @include flexible(center, center);
+
+            position: relative;
+
+            &:after {
+                display: inline-block;
+                content: "";
+                margin: 0 0 3px 8px;
+                width: 5px;
+                height: 5px;
+                border-top: 1px solid $color-dark-blue;
+                border-left: 1px solid $color-dark-blue;
+                transform: rotate(-135deg);
+                transition: all .3s;
+            }
+
+            &:hover {
+                &:after {
+                    border-top: 1px solid $color-orange;
+                    border-left: 1px solid $color-orange;
+                    transform: rotate(45deg);
+                }
+
+                ul {
+                    z-index: 100;
+
+                    @include flexible(space-between, left);
+
+                    flex-direction: column;
+
+                    li {
+                        &:hover {
+                            a {
+                                color: $color-orange;
+                            }
+                        }
+
+                        a {
+                            color: $color-white;
+                            transition: all .3s;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.active {
+            &::before {
+                transform: rotate(45deg);
+                top: 8px;
+            }
+
+            span {
+                transform: scale(0);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+                bottom: 7px;
+            }
+        }
+    }
+}
+
+.drop-down-menu {
+    position: absolute;
+    left: -20px;
+    top: 100%;
+    display: none;
+    padding: 20px;
+    background-color: $color-dark-blue;
+
+    &_l {
+        width: $width-drop-down-large;
+    }
+
+    &_m {
+        width: $width-drop-down-medium;
+    }
+
+    &_s {
+        width: $width-drop-down-small;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        &__logo {
+            left: calc(-50% + 15px);
+
+            & img {
+                height: 50px;
+                width: 40px;
+            }
+
+            &.active {
+                top: 8px;
+            }
+        }
+
+        &__list {
+            flex: 0 0 100%;
+            width: inherit;
+
+            @include font(15px, 25px, 500);
+
+            li {
+                padding: 10px 20px;
+            }
+
+            .drop-down {
+                @include flexible(start, center);
+
+                height: 0;
+                padding: 22px 20px 23px;
+            }
+        }
+
+        &__content {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .drop-down-menu {
+            z-index: 150;
+            right: 0;
+        }
+
+        &__burger {
+            display: block;
+            position: absolute;
+            top: 16px;
+            right: 15px;
+            z-index: 150;
+            width: 24px;
+            height: 18px;
+        }
+    }
+
+    .header__burger:before,
+    .header__burger:after {
+        content: "";
+        background-color: $color-dark-blue;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__burger:before {
+        top: 0;
+    }
+
+    .header__burger::after {
+        bottom: 0;
+    }
+
+    .header__burger span {
+        background-color: $color-dark-blue;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        top: 0;
+        margin: 8px 0 0 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__list {
+        padding: 80px 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        overflow: auto;
+        transition: all 0.3s ease 0s;
+        background-color: transparent;
+
+        li {
+            width: 100%;
+        }
+
+        .drop-down-menu_l, .drop-down-menu_m {
+            width: 100%;
+        }
+    }
+
+    .drop-down-menu {
+        left: 0;
+    }
+
+    .header__list.active {
+        display: flex;
+        bottom: 0;
+    }
+
+    .lock {
+        display: none;
+    }
+
+    .header__list .drop-down:hover ul {
+        display: none;
+    }
+
+    .header__list .drop-down:hover ul.active {
+        display: flex;
+        padding: 0;
+    }
+
+    .header__list li:hover a {
+        color: $color-dark-blue;
+    }
+
+    .header__list li:hover a.active {
+        color: $color-orange;
+    }
+
+    .header__list li {
+        @include flexible(start, center);
+    }
+
+    .header__list .drop-down:hover ul li:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .title-secondary.active {
+        max-width: 600px;
+        padding: 30px 60px 30px 70px;
+        background-color: transparent;
+        color: $color-dark-blue;
+        margin: 0;
+        position: absolute;
+        top: 39px;
+        left: 50%;
+        margin-right: -50%;
+        z-index: 5;
+        transform: translate(-50%, -50%);
+    }
+}

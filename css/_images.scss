@@ -1,0 +1,31 @@
+.page-subtitle {
+    margin: 60px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-dark-blue;
+
+    @include font(24px, 29px, 500);
+}
+
+.images {
+    &__container {
+        margin: 60px auto 0;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(160px, 100%));
+        gap: 0px 3px;
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    .item__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        max-height: none;
+    }
+}

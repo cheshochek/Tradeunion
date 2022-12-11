@@ -1,0 +1,190 @@
+.news-soc-and-tradeunion {
+    padding: 0 15px;
+
+    &__container {
+        margin: 60px auto 0;
+    }
+
+    &__items {
+        @include flexible(space-between, stretch);
+    }
+
+    &__item {
+        flex: 0 0 37%;
+
+        .item {
+            &__image {
+                max-height: 260px;
+            }
+        }
+    }
+
+    &__right {
+        flex: 0 0 60%;
+
+        @include flexible(space-between, center);
+
+        flex-direction: column;
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+
+            &:first-child {
+                margin: 0 0 15px 0;
+            }
+        }
+
+        .item {
+            &__image {
+                max-height: 220px;
+            }
+
+            &__content {
+                padding: 0 0 0 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                &-title {
+                    padding: 0;
+                    margin: 0 0 10px 0;
+                }
+
+                &-text {
+                    padding: 0;
+                    margin: 0 0 8px 0;
+                }
+
+                &-data-of-publish {
+                    padding: 10px 0 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .news-soc-and-tradeunion {
+        &__container {
+            max-width: 688px;
+        }
+
+        &__items {
+            @include flexible(space-between, center);
+
+            flex-direction: column;
+        }
+
+        &__item {
+            @include flexible(space-between, stretch);
+
+            flex: 0 0 100%;
+
+            .item {
+                &__image {
+                    max-width: 220px;
+                    max-width: 290px;
+                }
+
+                &__content {
+                    padding: 0 0 0 20px;
+
+                    &-title {
+                        margin: 0 0 10px 0;
+                        padding: 0;
+                    }
+
+                    &-text {
+                        padding: 0;
+                        margin: 0 0 10px 0;
+                    }
+
+                    &-data-of-publish {
+                        padding: 10px 0 20px;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            margin-top: 40px;
+            flex: 0 0 100%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .news-soc-and-tradeunion {
+        padding: 0;
+
+        &__items {
+            flex-direction: column;
+        }
+
+        &__item {
+            flex-direction: column;
+            flex: 0 0 100%;
+
+            .item {
+                max-width: 350px;
+
+                &__image {
+                    max-width: 220px;
+                    max-width: inherit;
+                }
+
+                &__content {
+                    padding: 20px 0 0;
+
+                    &-title {
+                        margin: 0 0 20px 0;
+                    }
+
+                    &-text {
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    &-data-of-publish {
+                        padding: 30px 0 20px;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            margin-top: 0;
+            flex: 0 0 100%;
+
+            &-item {
+                flex-direction: column;
+
+                &:first-child {
+                    margin: 0;
+                }
+
+                .item {
+                    margin-bottom: 0;
+
+                    &__content {
+                        padding: 20px 0 0;
+
+                        &-title {
+                            margin: 0 0 20px 0;
+                        }
+
+                        &-text {
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        &-data-of-publish {
+                            padding: 30px 0 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

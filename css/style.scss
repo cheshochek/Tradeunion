@@ -1,0 +1,104 @@
+$color-dark-blue: #0E3480;
+$color-light-blue: #5C73A0;
+$color-light-blue: #5C73A0;
+$color-orange: #FA9217;
+$color-black: #000;
+$color-white: #FDFDFD;
+$width-drop-down-large: 500px;
+$width-drop-down-medium: 250px;
+$width-drop-down-small: 200px;
+
+@mixin font($font-size, $line-height, $font-weight) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+
+@mixin flexible($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin line-clamp($line-clamp) {
+    display: -webkit-box;
+    box-sizing: content-box;
+    overflow: hidden;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+@import "_main";
+@import "_buttons";
+@import "_header";
+@import "_category-title";
+@import "_item";
+@import "_news-prof-info";
+@import "_news-soc-and-tradeunion";
+@import "_news-bsu";
+@import "_news-ev-and-congr";
+@import "_news-gallery";
+@import "_slider-banners";
+@import "_slider-main";
+@import "_footer";
+@import "_pass-to-page";
+@import "_page-title";
+@import "_structure-of-tradeunion";
+@import "_gallery";
+@import "_images";

@@ -1,0 +1,42 @@
+.page-title {
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        position: relative;
+        text-align: center;
+        display: inline-block;
+
+        @include font(48px, 59px, 400);
+
+        text-transform: uppercase;
+        color: $color-orange;
+
+        &::after {
+            position: absolute;
+            left: 12%;
+            bottom: 0;
+            width: 75%;
+            height: 1px;
+            border-bottom: 1px solid $color-orange;
+            content: "";
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .page-title {
+        h1 {
+            @include font(46px, 56px, 400);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        h1 {
+            @include font(28px, 34px, 400);
+        }
+    }
+}

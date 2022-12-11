@@ -1,0 +1,52 @@
+.structure-of-tradeunion {
+    &__container {
+        margin: 60px auto 0;
+        max-width: 776px;
+    }
+
+    &__item {
+        @include font(18px, 22px, 400);
+
+        display: none;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        &:nth-child(-n+10):nth-child(n+1) {
+            display: block;
+        }
+
+        span {
+            @include font(18px, 22px, 500);
+        }
+
+        a {
+            @include font(18px, 22px, 500);
+
+            color: $color-dark-blue;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .structure-of-tradeunion {
+        &__item {
+            @include font(14px, 17px, 400);
+
+            span {
+                @include font(14px, 17px, 500);
+            }
+
+            a {
+                @include font(14px, 17px, 500);
+
+                color: $color-dark-blue;
+            }
+        }
+    }
+}
