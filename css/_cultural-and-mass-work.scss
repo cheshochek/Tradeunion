@@ -1,0 +1,146 @@
+.cultural-and-mass-work {
+    &__container {
+        max-width: 900px;
+    }
+
+    p {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    &__commision {
+        @include font(18px, 26px, 500);
+
+        max-width: 700px;
+        margin: 60px auto 60px;
+
+        a {
+            color: $color-dark-blue;
+        }
+    }
+
+    &__text {
+        @include font(18px, 22px, 400);
+        margin: 60px auto 0;
+        max-width: 700px;
+
+        &-title {
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        &-address {
+            span {
+                font-weight: 500;
+            }
+        }
+
+        &-phone {
+            font-weight: 500;
+
+            a {
+                color: $color-dark-blue;
+            }
+        }
+
+        &-website {
+            font-weight: 500;
+
+            a {
+                color: $color-dark-blue;
+            }
+        }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0 0;
+
+        &__title {
+            @include font(24px, 29px, 500);
+
+            color: $color-dark-blue;
+        }
+
+        &__image {
+            margin: 30px 0 0;
+            width: 100%;
+            max-height: 470px;
+            object-fit: cover;
+        }
+
+        &__text {
+            @include font(18px, 22px, 500);
+
+            margin: 30px 0 0;
+            color: $color-black;
+
+            &-director {
+                span {
+                    color: $color-dark-blue;
+                }
+            }
+
+            &-repetition {
+                margin: 15px 0 0;
+            }
+        }
+
+        &__repetition-title {
+            text-transform: uppercase;
+        }
+
+        &__repetition-place {
+            margin: 5px 0 0;
+
+            span {
+                font-weight: 400;
+            }
+        }
+
+        &__repetition-timetable {
+            color: $color-dark-blue;
+        }
+
+        .button_more-detailed_recovery {
+            position: static;
+            margin: 30px 0 0;
+        }
+
+        &::after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            border-bottom: 1px solid $color-dark-blue;
+            margin: 30px 0 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cultural-and-mass-work {
+        &__container {
+            max-width: 100%;
+        }
+
+        &__commision {
+            @include font(16px, 23px, 500);
+        }
+
+        &__text {
+            @include font(14px, 17px, 400);
+        }
+
+        &-item {
+            &__title {
+                @include font(14px, 17px, 500);
+            }
+
+            &__text {
+                @include font(14px, 17px, 500);
+            }
+        }
+    }
+}

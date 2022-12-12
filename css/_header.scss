@@ -38,6 +38,7 @@
         flex: 0 1 calc(1070px / 1170px * 100%);
 
         @include font(13px, 22px, 500);
+        text-transform: uppercase;
 
         letter-spacing: 0.05em;
 
